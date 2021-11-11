@@ -1,2 +1,23 @@
-<app-server></app-server>
+<label for=""></label>
+<!-- First way is a type of one-way binding using a direct call of a method -->
+<!-- <input type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"> -->
+
+<!-- This was is two-way binding using built in ngModel -->
+<input type="text"
+class="form-control"
+[(ngModel)]="serverName">
+
+<!-- Output onto the page  -->
+<!-- <p>{{ serverName }}</p> -->
+
+<!-- Button where we used string interpolation and property binding, also demo'd built in click method  -->
+<button class="btn btn-primary" 
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">Add Server</button>
+
+<!-- Property Binding  -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
